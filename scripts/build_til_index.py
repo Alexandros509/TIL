@@ -16,6 +16,7 @@ import sys
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 # 연/월 폴더에 있는 TIL만 읽는다. 루트 README.md, TIL.md(프롬프트)는 제외.
@@ -141,7 +142,8 @@ def collect_entries() -> tuple[list[dict], list[str]]:
             {
                 "title": title,
                 "date": sort_date,
-                "path": "./" + path.relative_to(ROOT).as_posix(),
+                # 파일명이 #로 시작하면 마크다운이 제목 앵커로 오해하므로 인코딩한다.
+            "path": "./" + quote(path.relative_to(ROOT).as_posix(), safe="/"),
                 "tags": tags,
                 "categories": categories,
             }
