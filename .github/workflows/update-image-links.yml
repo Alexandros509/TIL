@@ -1,0 +1,48 @@
+name: Update Image Links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - "**/*.png"
+      - "**/*.jpg"
+      - "**/*.jpeg"
+      - "**/*.gif"
+      - "**/*.svg"
+      - "**/*.webp"
+      - "scripts/update_image_links.py"
+      - ".github/workflows/update-image-links.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: update-image-links
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rewrite local image paths
+        run: python scripts/update_image_links.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u "*.md"
+          if git diff --cached --quiet; then
+            echo "No markdown path changes"
+          else
+            git commit -m "chore: update image paths [skip ci]"
+            git push
+          fi
