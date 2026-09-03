@@ -1,11 +1,11 @@
 # TIL Index
 
-> 이 파일은 GitHub Actions가 `TIL/*.md`의 Front Matter를 읽어 자동 생성한다.
+> 이 파일은 GitHub Actions가 `20*/**/*.md` Front Matter를 읽어 자동 생성한다.
 > 손으로 고치지 않는다.
 
 ## 대분류
 
-허용 값: Git, Python, AI Literacy, Machine Learning.
+허용 값: Git, Python, AI Literacy, Machine Learning, SQL.
 전환일은 해당 대분류에 모두 나타난다.
 
 ### Git
@@ -40,6 +40,9 @@
 - [2026-08-27 데이터 스케일링, 데이터 분할, 경사하강법 구현, 다중 회귀와 규제 모델(Ridge / Lasso)](./2026/08/%2320260827%20TIL.md)
 - [2026-08-26 선형 회귀 모델과 오차 평가지표, 경사하강법과 옵티마이저](./2026/08/%2320260826%20TIL.md)
 - [2026-08-25 Pandas 정밀 조회 및 결측치 제어, Matplotlib 기초, 데이터 분석 기초, 머신러닝의 이해](./2026/08/%2320260825%20TIL.md)
+
+### SQL
+- [2026-09-02 허깅페이스 모델과 SQL 기초](./2026/09/%2320260902%20TIL.md)
 
 ## 태그
 
