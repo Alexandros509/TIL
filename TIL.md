@@ -288,6 +288,7 @@ category (대분류)
 - Python
 - AI Literacy
 - Machine Learning
+- SQL
 
 규칙
 

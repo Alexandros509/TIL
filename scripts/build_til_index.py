@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TIL/*.md Front Matter를 읽어 루트 TIL_INDEX.md를 다시 쓴다.
+"""설정된 TIL_GLOBS(기본 20*/**/*.md) Front Matter를 읽어 루트 TIL_INDEX.md를 다시 쓴다.
 
 목차 구조
 1. 대분류(category)
@@ -25,7 +25,22 @@ SKIP_NAMES = {"README.md", "TIL.md", "TIL_INDEX.md"}
 INDEX_PATH = ROOT / "TIL_INDEX.md"
 FILENAME_DATE = re.compile(r"^(\d{8})")
 
-CATEGORY_ORDER = ["Git", "Python", "AI Literacy", "Machine Learning"]
+CATEGORY_ORDER = ["Git", "Python", "AI Literacy", "Machine Learning", "SQL"]
+
+
+def escape_markdown_text(text: str) -> str:
+    return (
+        str(text)
+        .replace("\\", "\\\\")
+        .replace("[", "\\[")
+        .replace("]", "\\]")
+    )
+
+
+def sanitize_heading(text: str) -> str:
+    cleaned = re.sub(r"[\r\n]+", " ", str(text)).strip()
+    cleaned = cleaned.lstrip("#").strip()
+    return cleaned or "Untitled"
 
 
 def parse_front_matter(text: str) -> dict:
@@ -131,9 +146,9 @@ def collect_entries() -> tuple[list[dict], list[str]]:
             continue
         text = path.read_text(encoding="utf-8")
         meta = parse_front_matter(text)
-        tags = normalize_list(meta.get("tags"))
-        categories = normalize_list(meta.get("category"))
-        title = str(meta.get("title") or "").strip() or path.stem
+        tags = [sanitize_heading(t) for t in normalize_list(meta.get("tags"))]
+        categories = [sanitize_heading(c) for c in normalize_list(meta.get("category"))]
+        title = sanitize_heading(str(meta.get("title") or "").strip() or path.stem)
         sort_date = parse_date(meta.get("date")) or date_from_filename(path.name)
         if sort_date is None:
             warnings.append(f"날짜 없음, 건너뜀: {path.name}")
@@ -152,6 +167,7 @@ def collect_entries() -> tuple[list[dict], list[str]]:
 
 
 def _render_group(lines: list[str], heading: str, items: list[dict], level: str = "##") -> None:
+    heading = sanitize_heading(heading)
     lines.append(f"{level} {heading}")
     items = sorted(items, key=lambda x: (x["date"], x["title"]), reverse=True)
     seen = set()
@@ -160,7 +176,7 @@ def _render_group(lines: list[str], heading: str, items: list[dict], level: str 
         if key in seen:
             continue
         seen.add(key)
-        label = f"{item['date'].isoformat()} {item['title']}"
+        label = escape_markdown_text(f"{item['date'].isoformat()} {item['title']}")
         lines.append(f"- [{label}]({item['path']})")
     lines.append("")
 
@@ -184,12 +200,12 @@ def render_index(entries: list[dict]) -> str:
     lines = [
         "# TIL Index",
         "",
-        "> 이 파일은 GitHub Actions가 `TIL/*.md`의 Front Matter를 읽어 자동 생성한다.",
+        "> 이 파일은 GitHub Actions가 `20*/**/*.md` Front Matter를 읽어 자동 생성한다.",
         "> 손으로 고치지 않는다.",
         "",
         "## 대분류",
         "",
-        "허용 값: Git, Python, AI Literacy, Machine Learning.",
+        "허용 값: Git, Python, AI Literacy, Machine Learning, SQL.",
         "전환일은 해당 대분류에 모두 나타난다.",
         "",
     ]

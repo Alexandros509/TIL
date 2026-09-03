@@ -9,6 +9,10 @@ on:
       - ".github/workflows/update-til-index.yml"
   workflow_dispatch:
 
+concurrency:
+  group: update-til-index
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
