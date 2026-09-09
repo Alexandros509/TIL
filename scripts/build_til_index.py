@@ -21,7 +21,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parents[1]
 # 기존 일과 TIL은 연도 폴더, 방과 후 서버 트랙은 AWS_Afterschool.
 TIL_GLOBS = ("20*/**/*.md", "AWS_Afterschool/**/*.md")
-SKIP_NAMES = {"README.md", "TIL.md", "TIL_INDEX.md"}
+SKIP_NAMES = {"README.md", "TIL_EDITOR_PROMPT.md", "TIL_INDEX.md"}
 INDEX_PATH = ROOT / "TIL_INDEX.md"
 FILENAME_DATE = re.compile(r"^(\d{8})")
 
