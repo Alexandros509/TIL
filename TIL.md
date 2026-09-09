@@ -275,28 +275,42 @@ tags
 필기: git commit --amend 하다 메시지 창에서 막힘
 tags: [Git, Commit]
 
+필기: Lambda가 EC2보다 싸다는 얘기, IAM 계정 1–4
+tags: [Lambda, IAM]
+category: AWS
+
+필기: chmod, ssh로 접속하다 막힘
+tags: [chmod, SSH]
+category: Linux
+
 금지 예
 
-같은 필기에 tags: [Git, Commit, DevOps, Linux, 생산성]
+같은 Git 필기에 tags: [Git, Commit, DevOps, Linux, 생산성]
 → DevOps, Linux, 생산성은 본문이 다루지 않았으면 창작이다.
+
+같은 AWS 필기에 tags: [Lambda, IAM, Cloud, DevOps, 서버]
+→ Cloud, DevOps, 서버는 본문이 다루지 않았으면 창작이다.
 
 category (대분류)
 
-허용 값만 쓴다. 표기는 아래 네 개로 고정한다.
+허용 값만 쓴다. 표기는 아래 일곱 개로 고정한다.
 
 - Git
 - Python
 - AI Literacy
 - Machine Learning
 - SQL
+- AWS
+- Linux
 
 규칙
 
 - 오늘 필기가 속하는 학습 트랙이다. tags(소주제)와 역할을 섞지 않는다.
+- 폴더명(예: AWS_Afterschool)을 category로 복사하지 않는다. 경로는 저장소 구조이고, category는 오늘 필기의 중심 트랙이다.
 - 사용자가 러프 메모에 분류를 적었고 허용 목록·별칭과 맞으면 정규화해서 유지한다.
 - 사용자가 안 적었으면 오늘 필기의 중심 트랙으로 채운다.
 - 태그의 첫 항목을 category로 복사하지 않는다.
-- 허용 목록 밖의 대분류를 만들지 않는다. (DevOps, Data Science, Backend, 생산성 금지)
+- 허용 목록 밖의 대분류를 만들지 않는다. (DevOps, Data Science, Backend, Cloud, 생산성 금지)
 - 값이 하나면 스칼라, 둘 이상이면 리스트로 쓴다.
 
 중첩 (전환일)
@@ -304,8 +318,12 @@ category (대분류)
 - 하루에 트랙이 바뀌었거나, 본문이 두 트랙을 실질적으로 다루면 둘 다 넣는다.
 - 예: 파이썬 장을 마치고 프롬프트·LLM을 본 날 → `[Python, AI Literacy]`
 - 예: Pandas 실습 후 머신러닝 개요를 본 날 → `[Python, Machine Learning]`
+- 예: Lambda·IAM을 다루다 git push에서 막힌 날 → `[AWS, Git]`
+- 예: AWS 실습 중 chmod·ssh만 깊게 파고 본문이 리눅스 자체인 날 → `[AWS, Linux]`
 - 「어제의 복습」한 줄만 다른 트랙이면 그 트랙을 넣지 않는다.
 - 도구만 겹친다고 넣지 않는다. PyTorch를 써도 오늘 학습이 회귀·네트워크면 Machine Learning이지 Python이 아니다.
+- git을 썼다고 Git을 넣지 않는다. 오늘 학습이 커밋·브랜치가 아니면 Git이 아니다.
+- aws 콘솔을 열었다고 Linux를 넣지 않는다. 오늘 본문이 셸·권한·프로세스일 때만 Linux다.
 
 별칭 정규화
 
@@ -313,6 +331,8 @@ category (대분류)
 - python, 파이썬 → Python
 - 생성형 AI, 프롬프트 리터러시, AI 리터러시 → AI Literacy
 - ML, 머신러닝, 딥러닝 → Machine Learning
+- aws, AWS, 아마존웹서비스, 서버리스(오늘 필기가 AWS 서비스일 때) → AWS
+- linux, Linux, 리눅스, ubuntu, Ubuntu → Linux
 
 date
 
@@ -807,6 +827,31 @@ AI는 어느 쪽도 수정하지 않는다.
 다른 장,
 다음 단원은 포함하지 않는다.
 
+
+## 19-1. 사전 지식과 수업 TIL
+
+이 저장소는 TIL이 상위이고, 방과후 수업 필기는 그 아래 폴더(예: AWS_Afterschool)에 둔다.
+폴더를 나눈 것은 문서를 섞지 않기 위함이다. AI가 사전 지식 문서를 수업 TIL 본문에 합치지 않는다.
+
+사용자가 러프 메모에서 아래처럼 구분해 적으면 그 이름과 경계를 유지한다.
+
+- 사전 지식
+- 찾아본 내용
+- 위딩
+
+수업 내용 섹션과 합치지 않는다.
+내용이 같은 주제여도 출처가 다르면 합치지 않는다. (규칙 20과 같다.)
+
+수업 필기에 없는 리눅스·Git·AWS 일반론을
+교재나 AI 지식으로 채워 넣지 않는다.
+
+오늘 수업에서 실제로 쓴 명령·서비스·막힌 지점만 본문에 남긴다.
+
+태그는 오늘 필기에 나온 개념만 쓴다.
+사전 지식 후보라는 이유만으로 Linux, Git, AWS를 태그에 넣지 않는다.
+
+사전 지식용 위키 문서를 AI가 새로 작성하지 않는다.
+사용자가 그 문서를 별도로 준 경우에만 입력 자료 우선순위(규칙 11)를 따른다.
 --------------------------------------------
 
 ## 20. 구조 및 학습 경로 유지
