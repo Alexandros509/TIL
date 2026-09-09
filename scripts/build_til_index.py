@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""설정된 TIL_GLOBS(기본 20*/**/*.md) Front Matter를 읽어 루트 TIL_INDEX.md를 다시 쓴다.
+"""설정된 TIL_GLOBS Front Matter를 읽어 루트 TIL_INDEX.md를 다시 쓴다.
 
 목차 구조
 1. 대분류(category)
@@ -19,13 +19,21 @@ from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
-# 연/월 폴더에 있는 TIL만 읽는다. 루트 README.md, TIL.md(프롬프트)는 제외.
-TIL_GLOBS = ("20*/**/*.md",)
+# 기존 일과 TIL은 연도 폴더, 방과 후 서버 트랙은 AWS_Afterschool.
+TIL_GLOBS = ("20*/**/*.md", "AWS_Afterschool/**/*.md")
 SKIP_NAMES = {"README.md", "TIL.md", "TIL_INDEX.md"}
 INDEX_PATH = ROOT / "TIL_INDEX.md"
 FILENAME_DATE = re.compile(r"^(\d{8})")
 
-CATEGORY_ORDER = ["Git", "Python", "AI Literacy", "Machine Learning", "SQL"]
+CATEGORY_ORDER = [
+    "Git",
+    "Python",
+    "AI Literacy",
+    "Machine Learning",
+    "SQL",
+    "Linux",
+    "AWS",
+]
 
 
 def escape_markdown_text(text: str) -> str:
@@ -200,12 +208,12 @@ def render_index(entries: list[dict]) -> str:
     lines = [
         "# TIL Index",
         "",
-        "> 이 파일은 GitHub Actions가 `20*/**/*.md` Front Matter를 읽어 자동 생성한다.",
+        "> 이 파일은 GitHub Actions가 `20*/**/*.md`, `AWS_Afterschool/**/*.md` Front Matter를 읽어 자동 생성한다.",
         "> 손으로 고치지 않는다.",
         "",
         "## 대분류",
         "",
-        "허용 값: Git, Python, AI Literacy, Machine Learning, SQL.",
+        "허용 값: Git, Python, AI Literacy, Machine Learning, SQL, Linux, AWS.",
         "전환일은 해당 대분류에 모두 나타난다.",
         "",
     ]
