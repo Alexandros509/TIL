@@ -15,6 +15,7 @@
 ## 🗂️ Categories
 
 분류는 폴더가 아니라 각 글 Front Matter의 `category`입니다.
+`AWS_Afterschool`은 폴더 이름일 뿐, 대분류가 아닙니다.
 목차에서 바로 이동할 수 있습니다.
 
 * [🌿 Git](./TIL_INDEX.md#git) — 버전 관리, 명령어, 워크플로우
@@ -24,6 +25,8 @@
 * [🗄️ SQL](./TIL_INDEX.md#sql) — SQL, 데이터베이스
 * [🐧 Linux](./TIL_INDEX.md#linux) — 셸, 권한, 프로세스
 * [☁️ AWS](./TIL_INDEX.md#aws) — EC2, IAM, VPC, 서버리스
+* [🖥️ Frontend](./TIL_INDEX.md#frontend) — HTML/CSS, TypeScript, React, Next.js
+* [⚙️ Backend](./TIL_INDEX.md#backend) — API, 아키텍처
 
 하루가 두 트랙을 넘나들면 목차 두 곳에 같은 글이 올라갑니다.
 
@@ -35,4 +38,4 @@
 2. **나만의 언어로 정리하기:** 복사하지 않고, 내가 이해한 방식과 인사이트를 적는다.
 3. **문제와 해결 과정 포함하기:** 에러와 시행착오, 해결을 남긴다.
 4. **미래의 나를 위해 쓰기:** 다시 읽었을 때 복습되게 구조화한다.
-5. **분류는 Front Matter에:** `category`는 Git / Python / AI Literacy / Machine Learning / SQL / Linux / AWS만 쓴다.
+5. **분류는 Front Matter에:** `category`는 Git / Python / AI Literacy / Machine Learning / SQL / Linux / AWS / Frontend / Backend만 쓴다.
