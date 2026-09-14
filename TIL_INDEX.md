@@ -5,7 +5,7 @@
 
 ## 대분류
 
-허용 값: Git, Python, AI Literacy, Machine Learning, SQL, Linux, AWS.
+허용 값: Git, Python, AI Literacy, Machine Learning, SQL, Linux, AWS, Frontend, Backend.
 전환일은 해당 대분류에 모두 나타난다.
 
 ### Git
