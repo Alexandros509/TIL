@@ -57,6 +57,7 @@
 - [2026-09-02 허깅페이스 모델과 SQL 기초](./2026/09/20260902%20TIL.md)
 
 ### AWS
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
 
@@ -112,6 +113,7 @@
 - [2026-08-10 파이썬 기초 (시퀀스 자료구조, 매핑 및 집합 자료구조)](./2026/08/20260810%20TIL.md)
 
 ### EC2
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
 
 ### ERD
@@ -119,6 +121,9 @@
 
 ### EXISTS
 - [2026-09-08 서브쿼리 기초](./2026/09/20260908%20TIL.md)
+
+### ElasticIP
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 
 ### Embedding
 - [2026-08-31 파이토치 심층 신경망과 순환 신경망(RNN) 아키텍처](./2026/08/20260831%20TIL.md)
@@ -221,10 +226,14 @@
 ### Module
 - [2026-08-14 이터레이터와 제너레이터, 모듈과 패키지](./2026/08/20260814%20TIL.md)
 
+### Nginx
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
+
 ### NumPy
 - [2026-08-24 프롬프팅 패턴 이해 및 Numpy, Pandas](./2026/08/20260824%20TIL.md)
 
 ### PA-Lv3
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
 
@@ -300,8 +309,14 @@
 ### SSH
 - [2026-08-03 Dos 명령어, Git 기본 설정 및 커밋 워크플로우](./2026/08/20260803%20TIL.md)
 
+### SSR
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
+
 ### Scaling
 - [2026-08-27 데이터 스케일링, 데이터 분할, 경사하강법 구현, 다중 회귀와 규제 모델(Ridge / Lasso)](./2026/08/20260827%20TIL.md)
+
+### SecurityGroup
+- [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 
 ### Semantic
 - [2026-09-15 Form·시멘틱·CSS 기초](./2026/09/20260915%20TIL.md)
