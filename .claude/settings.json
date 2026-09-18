@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(cd \"C:\\\\Users\\\\417no\\\\Documents\\\\TIL\\\\TIL\" && d=2026-08-03; end=2026-09-17\nwhile [ \"$d\" != \"$end\" ]; do\n  dow=$\\(date -d \"$d\" +%a\\)\n  fname_star=\"2026/$\\(date -d \"$d\" +%m\\)/#$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  fname=\"2026/$\\(date -d \"$d\" +%m\\)/$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  if [ -f \"$fname\" ] || [ -f \"$fname_star\" ]; then mark=\"O\"; else mark=\".\"; fi\n  echo \"$d $dow $mark\"\n  d=$\\(date -d \"$d + 1 day\" +%Y-%m-%d\\)\ndone)"
+      "Bash(cd \"C:\\\\Users\\\\417no\\\\Documents\\\\TIL\\\\TIL\" && d=2026-08-03; end=2026-09-17\nwhile [ \"$d\" != \"$end\" ]; do\n  dow=$\\(date -d \"$d\" +%a\\)\n  fname_star=\"2026/$\\(date -d \"$d\" +%m\\)/#$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  fname=\"2026/$\\(date -d \"$d\" +%m\\)/$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  if [ -f \"$fname\" ] || [ -f \"$fname_star\" ]; then mark=\"O\"; else mark=\".\"; fi\n  echo \"$d $dow $mark\"\n  d=$\\(date -d \"$d + 1 day\" +%Y-%m-%d\\)\ndone)",
+      "Bash(grep -rl \"^title:$\" --include=\"*.md\" .)"
     ]
   }
 }
