@@ -6,7 +6,7 @@
 
 - [TIL 목차](./TIL_INDEX.md) ← 대분류·태그·글 링크는 여기
 - 일과 글: `2026/08/`, `2026/09/` …
-- 방과 후 서버 트랙: `AWS_Afterschool/`
+- 방과 후: `AWS_Afterschool/`, `Python_Afterschool/`
 - 그림: `images/`
 - `TIL_INDEX.md`는 GitHub Actions가 자동 갱신합니다. 손으로 고치지 않습니다.
 

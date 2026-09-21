@@ -6,6 +6,7 @@ on:
     paths:
       - "20*/**/*.md"
       - "AWS_Afterschool/**/*.md"
+      - "Python_Afterschool/**/*.md"
       - "scripts/build_til_index.py"
       - ".github/workflows/update-til-index.yml"
   workflow_dispatch:
