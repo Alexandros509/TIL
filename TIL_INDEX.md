@@ -1,6 +1,6 @@
 # TIL Index
 
-> 이 파일은 GitHub Actions가 `20*/**/*.md`, `AWS_Afterschool/**/*.md` Front Matter를 읽어 자동 생성한다.
+> 이 파일은 GitHub Actions가 `20*/**/*.md`, `AWS_Afterschool/**/*.md`, `Python_Afterschool/**/*.md` Front Matter를 읽어 자동 생성한다.
 > 손으로 고치지 않는다.
 
 ## 대분류
@@ -14,6 +14,7 @@
 - [2026-08-03 Dos 명령어, Git 기본 설정 및 커밋 워크플로우](./2026/08/20260803%20TIL.md)
 
 ### Python
+- [2026-09-18 파이썬 정규 표현식](./Python_Afterschool/20260918%20Python.md)
 - [2026-09-14 HTML·LLM 한계와 메시지 구조](./2026/09/20260914%20TIL.md)
 - [2026-09-11 REST·저장 프로그램과 주문 함수](./2026/09/20260911%20TIL.md)
 - [2026-08-25 Pandas 정밀 조회 및 결측치 제어, Matplotlib 기초, 데이터 분석 기초, 머신러닝의 이해](./2026/08/20260825%20TIL.md)
@@ -314,8 +315,14 @@
 ### Rebase
 - [2026-08-04 Git 스테이징, 커밋, 변경 복구, 브랜치 관리 및 원격 저장소 동기화](./2026/08/20260804%20TIL.md)
 
+### Regex
+- [2026-09-18 파이썬 정규 표현식](./Python_Afterschool/20260918%20Python.md)
+
 ### Region
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
+
+### Regular Expression
+- [2026-09-18 파이썬 정규 표현식](./Python_Afterschool/20260918%20Python.md)
 
 ### Remote
 - [2026-08-04 Git 스테이징, 커밋, 변경 복구, 브랜치 관리 및 원격 저장소 동기화](./2026/08/20260804%20TIL.md)
@@ -407,6 +414,9 @@
 
 ### lambda
 - [2026-08-13 변수 스코프와 람다 함수, 클로저와 데코레이터](./2026/08/20260813%20TIL.md)
+
+### re
+- [2026-09-18 파이썬 정규 표현식](./Python_Afterschool/20260918%20Python.md)
 
 ### self
 - [2026-08-18 객체지향, 클래스, 상속, 캡슐화](./2026/08/20260818%20TIL.md)
