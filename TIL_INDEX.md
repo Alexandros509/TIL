@@ -59,6 +59,7 @@
 - [2026-09-02 허깅페이스 모델과 SQL 기초](./2026/09/20260902%20TIL.md)
 
 ### AWS
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 - [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
@@ -107,6 +108,9 @@
 ### Commit
 - [2026-08-03 Dos 명령어, Git 기본 설정 및 커밋 워크플로우](./2026/08/20260803%20TIL.md)
 
+### Compose
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
+
 ### Control Flow
 - [2026-09-22 JS 연산자·제어문·객체 리터럴](./2026/09/20260922%20TIL.md)
 
@@ -127,7 +131,11 @@
 ### Dictionary
 - [2026-08-10 파이썬 기초 (시퀀스 자료구조, 매핑 및 집합 자료구조)](./2026/08/20260810%20TIL.md)
 
+### Docker
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
+
 ### EC2
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 - [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
 
@@ -145,6 +153,9 @@
 
 ### Exception
 - [2026-08-19 파이썬 클래스 변수와 메서드, 예외 처리 흐름 및 디버깅 기초, 내장 함수](./2026/08/20260819%20TIL.md)
+
+### FastAPI
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### Flexbox
 - [2026-09-17 Flexbox·Grid·CSS 스타일링](./2026/09/20260917%20TIL.md)
@@ -241,6 +252,9 @@
 
 ### MAE
 - [2026-08-26 선형 회귀 모델과 오차 평가지표, 경사하강법과 옵티마이저](./2026/08/20260826%20TIL.md)
+
+### MSA
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### MSE
 - [2026-08-26 선형 회귀 모델과 오차 평가지표, 경사하강법과 옵티마이저](./2026/08/20260826%20TIL.md)
@@ -340,6 +354,9 @@
 ### Ridge
 - [2026-08-27 데이터 스케일링, 데이터 분할, 경사하강법 구현, 다중 회귀와 규제 모델(Ridge / Lasso)](./2026/08/20260827%20TIL.md)
 
+### Route53
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
+
 ### RunnableLambda
 - [2026-09-22 JS 연산자·제어문·객체 리터럴](./2026/09/20260922%20TIL.md)
 - [2026-09-21 Node.js 환경과 JS 기초](./2026/09/20260921%20TIL.md)
@@ -382,6 +399,9 @@
 
 ### Subquery
 - [2026-09-08 서브쿼리 기초](./2026/09/20260908%20TIL.md)
+
+### Swagger
+- [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### Transformer
 - [2026-09-01 어텐션 메커니즘과 트랜스포머](./2026/09/20260901%20TIL.md)
