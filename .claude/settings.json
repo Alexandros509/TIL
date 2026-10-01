@@ -2,7 +2,26 @@
   "permissions": {
     "allow": [
       "Bash(cd \"C:\\\\Users\\\\417no\\\\Documents\\\\TIL\\\\TIL\" && d=2026-08-03; end=2026-09-17\nwhile [ \"$d\" != \"$end\" ]; do\n  dow=$\\(date -d \"$d\" +%a\\)\n  fname_star=\"2026/$\\(date -d \"$d\" +%m\\)/#$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  fname=\"2026/$\\(date -d \"$d\" +%m\\)/$\\(date -d \"$d\" +%Y%m%d\\) TIL.md\"\n  if [ -f \"$fname\" ] || [ -f \"$fname_star\" ]; then mark=\"O\"; else mark=\".\"; fi\n  echo \"$d $dow $mark\"\n  d=$\\(date -d \"$d + 1 day\" +%Y-%m-%d\\)\ndone)",
-      "Bash(grep -rl \"^title:$\" --include=\"*.md\" .)"
+      "Bash(grep -rl \"^title:$\" --include=\"*.md\" .)",
+      "Read(//c/tmp/**)",
+      "Bash(node -e ' *)",
+      "Bash(npm install *)",
+      "Bash(node .tmp_decompress.js)",
+      "Bash(node .tmp_decompress2.js)",
+      "Bash(node .tmp_generate.js)",
+      "Bash(find / -maxdepth 6 -iname \"*jsg_k3447*\" -o -iname \"*heluo*\" 2>/dev/null | grep -v \"/TIL/TIL/saju_heluo.md\")",
+      "Read(//c//**)",
+      "Read(//c/Users/417no/**)",
+      "Bash(for d in /c/Users/417no/Documents/AWS /c/Users/417no/Documents/ax_frontend /c/Users/417no/Documents/ax_study /c/Users/417no/Documents/student_data_project /c/Users/417no/Documents/study; do echo \"== $d ==\"; find \"$d\" -maxdepth 3 -iname \"*heluo*\" -o -iname \"*jsg*\" -o -iname \"*k3-447*\" 2>/dev/null; done)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/tmp/jsg_k3447_pages/book6/**)",
+      "Bash(find \"/c/Users/417no/Documents/Python/saju-project\" -iname \"*book*\" 2>/dev/null | grep -v node_modules | grep -v tmp/jsg_k3447_pages)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/**)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/tmp/jsg_k3447_pages/book8/**)",
+      "Bash(ls \"/c/Users/417no/Documents/Python/saju-project/data/sources/heluo/jsg_k3447/collation/\" 2>&1)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/data/sources/heluo/jsg_k3447/collation//**)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/data/sources/heluo/**)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/data/sources/heluo/jsg_k3447/**)",
+      "Read(//c/Users/417no/Documents/Python/saju-project/docs/**)"
     ]
   }
 }
