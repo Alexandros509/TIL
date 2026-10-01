@@ -59,12 +59,15 @@
 - [2026-09-02 허깅페이스 모델과 SQL 기초](./2026/09/20260902%20TIL.md)
 
 ### AWS
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 - [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 - [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
 
 ### Frontend
+- [2026-10-01 이벤트 모델·전파·타이머·AJAX](./2026/10/20261001%20TIL.md)
+- [2026-09-30 BOM·Window·Location·History·DOM·속성·classList](./2026/09/20260930%20TIL.md)
 - [2026-09-29 함수 인수·일급·화살표·클로저·this바인딩·배열·내장객체](./2026/09/20260929%20TIL.md)
 - [2026-09-23 객체 리터럴·함수·프로토타입·프로퍼티·JSON](./2026/09/20260923%20TIL.md)
 - [2026-09-22 JS 연산자·제어문·객체 리터럴](./2026/09/20260922%20TIL.md)
@@ -80,11 +83,17 @@
 - [2026-09-09 ACID · LangChain · SSE](./2026/09/20260909%20TIL.md)
 - [2026-09-08 서브쿼리 기초](./2026/09/20260908%20TIL.md)
 
+### AJAX
+- [2026-10-01 이벤트 모델·전파·타이머·AJAX](./2026/10/20261001%20TIL.md)
+
 ### Array
 - [2026-09-29 함수 인수·일급·화살표·클로저·this바인딩·배열·내장객체](./2026/09/20260929%20TIL.md)
 
 ### Attention
 - [2026-09-01 어텐션 메커니즘과 트랜스포머](./2026/09/20260901%20TIL.md)
+
+### BOM
+- [2026-09-30 BOM·Window·Location·History·DOM·속성·classList](./2026/09/20260930%20TIL.md)
 
 ### Billing
 - [2026-09-10 PA Lv3 — 리전 선택과 IAM](./AWS_Afterschool/20260910%20AWS.md)
@@ -121,6 +130,7 @@
 - [2026-08-03 Dos 명령어, Git 기본 설정 및 커밋 워크플로우](./2026/08/20260803%20TIL.md)
 
 ### Compose
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 - [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### Control Flow
@@ -134,6 +144,9 @@
 - [2026-09-04 5장 SQL & 데이터베이스](./2026/09/20260904%20TIL.md)
 - [2026-09-03 SQL DDL·DML과 정규화](./2026/09/20260903%20TIL.md)
 
+### DOM
+- [2026-09-30 BOM·Window·Location·History·DOM·속성·classList](./2026/09/20260930%20TIL.md)
+
 ### DOS
 - [2026-08-03 Dos 명령어, Git 기본 설정 및 커밋 워크플로우](./2026/08/20260803%20TIL.md)
 
@@ -144,9 +157,11 @@
 - [2026-08-10 파이썬 기초 (시퀀스 자료구조, 매핑 및 집합 자료구조)](./2026/08/20260810%20TIL.md)
 
 ### Docker
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 - [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### EC2
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 - [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 - [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 - [2026-09-08 PA Lv3 OT — 과정 지도와 AWS 워딩](./AWS_Afterschool/20260908%20AWS.md)
@@ -163,10 +178,14 @@
 ### Embedding
 - [2026-08-31 파이토치 심층 신경망과 순환 신경망(RNN) 아키텍처](./2026/08/20260831%20TIL.md)
 
+### Event
+- [2026-10-01 이벤트 모델·전파·타이머·AJAX](./2026/10/20261001%20TIL.md)
+
 ### Exception
 - [2026-08-19 파이썬 클래스 변수와 메서드, 예외 처리 흐름 및 디버깅 기초, 내장 함수](./2026/08/20260819%20TIL.md)
 
 ### FastAPI
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 - [2026-09-22 Docker · FastAPI MSA · EC2](./AWS_Afterschool/20260922%20AWS.md)
 
 ### Flexbox
@@ -399,6 +418,9 @@
 ### Scaling
 - [2026-08-27 데이터 스케일링, 데이터 분할, 경사하강법 구현, 다중 회귀와 규제 모델(Ridge / Lasso)](./2026/08/20260827%20TIL.md)
 
+### Security Group
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
+
 ### SecurityGroup
 - [2026-09-15 PA Lv3 — EC2 기동 Nginx 탄력적 IP](./AWS_Afterschool/20260915%20AWS.md)
 
@@ -444,12 +466,21 @@
 ### Viewport
 - [2026-09-18 뷰포트·미디어 쿼리·브레이크포인트](./2026/09/20260918%20TIL.md)
 
+### Window
+- [2026-09-30 BOM·Window·Location·History·DOM·속성·classList](./2026/09/20260930%20TIL.md)
+
+### addEventListener
+- [2026-10-01 이벤트 모델·전파·타이머·AJAX](./2026/10/20261001%20TIL.md)
+
 ### asyncio
 - [2026-08-21 동기/비동기 프로그래밍 및 생성형 AI의 동작 원리와 한계](./2026/08/20260821%20TIL.md)
 - [2026-08-20 파이썬 내장 함수, 표준 라이브러리, 파일 입출력 및 구조 변환, 동기(Sync)와 비동기(Async)](./2026/08/20260820%20TIL.md)
 
 ### background
 - [2026-09-17 Flexbox·Grid·CSS 스타일링](./2026/09/20260917%20TIL.md)
+
+### classList
+- [2026-09-30 BOM·Window·Location·History·DOM·속성·classList](./2026/09/20260930%20TIL.md)
 
 ### enumerate
 - [2026-08-20 파이썬 내장 함수, 표준 라이브러리, 파일 입출력 및 구조 변환, 동기(Sync)와 비동기(Async)](./2026/08/20260820%20TIL.md)
@@ -459,6 +490,9 @@
 
 ### git pull
 - [2026-08-05 Git & GitHub (교재 1~4장 일부)](./2026/08/20260805%20TIL.md)
+
+### healthcheck
+- [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 
 ### httpx
 - [2026-08-21 동기/비동기 프로그래밍 및 생성형 AI의 동작 원리와 한계](./2026/08/20260821%20TIL.md)
@@ -471,6 +505,9 @@
 
 ### self
 - [2026-08-18 객체지향, 클래스, 상속, 캡슐화](./2026/08/20260818%20TIL.md)
+
+### setTimeout
+- [2026-10-01 이벤트 모델·전파·타이머·AJAX](./2026/10/20261001%20TIL.md)
 
 ### train_test_split
 - [2026-08-27 데이터 스케일링, 데이터 분할, 경사하강법 구현, 다중 회귀와 규제 모델(Ridge / Lasso)](./2026/08/20260827%20TIL.md)
