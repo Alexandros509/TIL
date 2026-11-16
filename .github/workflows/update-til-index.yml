@@ -32,6 +32,7 @@ jobs:
         run: pip install pyyaml
 
       - name: Build TIL_INDEX.md
+        # Front Matter 문제는 ::warning:: 주석으로 Actions 요약에 표시된다(빌드는 실패하지 않음).
         run: python scripts/build_til_index.py
 
       - name: Commit index if changed
@@ -43,5 +44,7 @@ jobs:
             echo "No index changes"
           else
             git commit -m "chore: update TIL_INDEX.md [skip ci]"
+            # 같은 push에서 Update Image Links도 커밋할 수 있어 push 전에 최신 main 위로 올린다.
+            git pull --rebase origin main
             git push
           fi

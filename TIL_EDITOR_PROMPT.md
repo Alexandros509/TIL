@@ -277,7 +277,7 @@ tags: [Git, Commit]
 
 필기: useState로 폼 상태 관리, Next.js 페이지 라우팅
 tags: [React, Next.js]
-category: Frontend
+category: React & Next.js
 
 필기: REST 엔드포인트와 상태코드 정리
 tags: [REST, API]
@@ -285,7 +285,7 @@ category: Backend
 
 필기: 특강에서 정규식과 Streamlit만
 tags: [Regex, Streamlit]
-category: Python
+category: 특강
 
 금지 예
 
@@ -293,21 +293,30 @@ category: Python
 → DevOps, Linux, 생산성은 본문이 다루지 않았으면 창작이다.
 
 프론트 필기에 tags: [React, Frontend, 웹, 생산성]
-→ Frontend는 category다. 웹·생산성은 본문에 없으면 창작이다.
+→ Frontend·React & Next.js는 category다. 웹·생산성은 본문에 없으면 창작이다.
 
 category (대분류)
 
-허용 값만 쓴다. 표기는 아래만 쓴다.
+허용 값만 쓴다. 표기는 아래만 쓴다. 순서·과목은 교안 합본(2026-11-16) 기준이다.
+기준 목록은 `scripts/build_til_index.py`의 `CATEGORIES`다.
 
-- Git
-- Python
-- AI Literacy
-- Machine Learning
-- SQL
-- Linux
-- AWS
-- Frontend
-- Backend
+- Git (교안 01 Git & Github)
+- AI Literacy (교안 02 AI Literacy)
+- Machine Learning (교안 03 머신러닝 기초)
+- Python (교안 04 Python 기초)
+- SQL (교안 05 SQL & 데이터베이스)
+- Database & AI (교안 06 데이터베이스 & AI 활용)
+- Frontend (교안 07 프론트엔드 개발: HTML/CSS/JavaScript/DOM)
+- TypeScript (교안 08 프론트엔드 심화)
+- React & Next.js (교안 09 프론트엔드 응용)
+- Backend (교안 10 백엔드 아키텍처 & API 설계)
+- LLM (교안 11 LLM 프롬프트 엔지니어링)
+- RAG (교안 12 RAG 파이프라인 설계)
+- Workflow (교안 13 워크플로우 오케스트레이션)
+- LLMOps (교안 14 LLMOps)
+- 특강 (교안 특강)
+- Linux (교안 밖)
+- AWS (교안 밖, 방과 후)
 
 규칙
 
@@ -322,13 +331,14 @@ category (대분류)
 중첩 (전환일)
 
 - 하루에 트랙이 바뀌었거나, 본문이 두 트랙을 실질적으로 다루면 둘 다 넣는다.
-- 예: 파이썬 장을 마치고 프롬프트·LLM을 본 날 → `[Python, AI Literacy]`
+- 예: 파이썬 장을 마치고 생성형 AI 리터러시를 본 날 → `[Python, AI Literacy]`
+- 예: HTML 실습 후 LLM 메시지 구조를 본 날 → `[Frontend, LLM]`
 - 예: Pandas 실습 후 머신러닝 개요를 본 날 → `[Python, Machine Learning]`
 - 「어제의 복습」한 줄만 다른 트랙이면 그 트랙을 넣지 않는다.
 - 도구만 겹친다고 넣지 않는다. PyTorch를 써도 오늘 학습이 회귀·네트워크면 Machine Learning이지 Python이 아니다.
 - EC2만 다루고 리눅스는 복습 한 줄이면 AWS만 넣는다.
-- TypeScript·React만 깊게 파면 Frontend다. Next를 썼다고 Backend를 넣지 않는다.
-- 특강(정규식, Streamlit, NumPy)은 새 대분류를 만들지 않는다. 기존 트랙 + tags다.
+- TypeScript 수업이면 TypeScript, React·Next.js 수업이면 React & Next.js다. Next를 썼다고 Backend를 넣지 않는다.
+- 특강(정규식, Streamlit, NumPy 등)만 다룬 날은 특강이다. 정규 수업과 섞인 날은 `[해당 트랙, 특강]`처럼 둘 다 쓴다.
 
 별칭 정규화
 
@@ -337,11 +347,17 @@ category (대분류)
 - 생성형 AI, 프롬프트 리터러시, AI 리터러시 → AI Literacy
 - ML, 머신러닝, 딥러닝 → Machine Learning
 - sql, 데이터베이스, Database → SQL
+- 데이터베이스 & AI 활용, DBAI, Supabase 수업 → Database & AI
 - linux, 리눅스, Ubuntu, 셸 → Linux
 - aws, Amazon Web Services → AWS
-- 프론트엔드, TypeScript 수업, React, Next.js → Frontend
+- 프론트엔드, 프론트엔드 개발 → Frontend
+- TypeScript 수업, 프론트엔드 심화 → TypeScript
+- React, Next.js, 프론트엔드 응용 → React & Next.js
 - 백엔드, API 설계, REST → Backend
-- LLM 프롬프트 엔지니어링 → AI Literacy (대분류를 새로 만들지 않는다)
+- LLM 프롬프트 엔지니어링, 프롬프트 엔지니어링 → LLM
+- RAG 파이프라인 설계 → RAG
+- 워크플로우 오케스트레이션 → Workflow
+- LLM Ops, LLMOps → LLMOps
 - DevOps, Cloud, Server → 대분류로 승격하지 않고 tags에만 둔다.
 
 date

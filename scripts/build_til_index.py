@@ -2,8 +2,11 @@
 """설정된 TIL_GLOBS Front Matter를 읽어 루트 TIL_INDEX.md를 다시 쓴다.
 
 목차 구조
-1. 대분류(category)
+1. 대분류(category) — 교안 합본 과목 기준 CATEGORIES 순서, 별칭은 CATEGORY_ALIASES로 정규화
 2. 태그(tags)
+
+Front Matter 점검(허용 밖 키, tags 4개 초과, date 누락, 허용 밖 category)은
+경고로만 출력하고 목차 생성은 계속한다.
 
 전환일은 category 리스트라 두 대분류 섹션에 같은 글이 들어간다.
 date가 없으면 파일명 YYYYMMDD를 쓴다.
@@ -11,6 +14,7 @@ date가 없으면 파일명 YYYYMMDD를 쓴다.
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from collections import defaultdict
@@ -29,17 +33,69 @@ SKIP_NAMES = {"README.md", "TIL.md", "TIL_INDEX.md"}
 INDEX_PATH = ROOT / "TIL_INDEX.md"
 FILENAME_DATE = re.compile(r"^(\d{8})")
 
-CATEGORY_ORDER = [
-    "Git",
-    "Python",
-    "AI Literacy",
-    "Machine Learning",
-    "SQL",
-    "Linux",
-    "AWS",
-    "Frontend",
-    "Backend",
+# 대분류(category) 정의 — 교안 합본(2026-11-16) 과목 순서 + 교안 밖 트랙.
+# (category 값, 교안 폴더, 교안 과목명)
+CATEGORIES = [
+    ("Git", "01-git", "Git & Github"),
+    ("AI Literacy", "02-ai-literacy", "AI Literacy"),
+    ("Machine Learning", "03-ml", "머신러닝 기초"),
+    ("Python", "04-python", "Python 기초"),
+    ("SQL", "05-sql", "SQL & 데이터베이스"),
+    ("Database & AI", "06-db-ai", "데이터베이스 & AI 활용"),
+    ("Frontend", "07-frontend", "프론트엔드 개발"),
+    ("TypeScript", "08-typescript", "프론트엔드 심화 (TypeScript)"),
+    ("React & Next.js", "09-react", "프론트엔드 응용 (React/Next.js)"),
+    ("Backend", "10-backend", "백엔드 아키텍처 & API 설계"),
+    ("LLM", "11-llm", "LLM 프롬프트 엔지니어링"),
+    ("RAG", "12-rag", "RAG 파이프라인 설계"),
+    ("Workflow", "13-workflow", "워크플로우 오케스트레이션"),
+    ("LLMOps", "14-llmops", "LLMOps"),
+    ("특강", "특강", "특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등)"),
+    ("Linux", "-", "교안 밖 (방과 후·자습)"),
+    ("AWS", "-", "교안 밖 (AWS 방과 후)"),
 ]
+CATEGORY_ORDER = [c[0] for c in CATEGORIES]
+
+# 별칭·옛 표기 → 정식 category. 대소문자·앞뒤 공백 무시.
+# Front Matter를 고치기 전에도 목차가 깨지지 않게 하는 안전망이다.
+# "Frontend"는 07 과목의 정식 값이라 그대로 둔다(TS/React 날을 자동으로 옮기지 않음).
+CATEGORY_ALIASES = {
+    "git": "Git", "github": "Git", "git & github": "Git",
+    "ail": "AI Literacy", "ai 리터러시": "AI Literacy", "ai literacy": "AI Literacy",
+    "생성형 ai": "AI Literacy", "프롬프트 리터러시": "AI Literacy",
+    "ml": "Machine Learning", "머신러닝": "Machine Learning", "머신러닝 기초": "Machine Learning",
+    "딥러닝": "Machine Learning",
+    "py": "Python", "python": "Python", "파이썬": "Python", "python 기초": "Python",
+    "sql": "SQL", "database": "SQL", "데이터베이스": "SQL", "sql & 데이터베이스": "SQL",
+    "dbai": "Database & AI", "db-ai": "Database & AI", "db & ai": "Database & AI",
+    "database & ai": "Database & AI", "데이터베이스 & ai 활용": "Database & AI",
+    "데이터베이스와 ai 활용": "Database & AI", "supabase": "Database & AI",
+    "fe": "Frontend", "frontend": "Frontend", "프론트엔드": "Frontend", "프론트엔드 개발": "Frontend",
+    "ts": "TypeScript", "typescript": "TypeScript", "프론트엔드 심화": "TypeScript",
+    "rn": "React & Next.js", "react": "React & Next.js", "next.js": "React & Next.js",
+    "nextjs": "React & Next.js", "react/next.js": "React & Next.js", "react & next.js": "React & Next.js",
+    "프론트엔드 응용": "React & Next.js",
+    "be": "Backend", "backend": "Backend", "백엔드": "Backend", "api 설계": "Backend",
+    "백엔드 아키텍처 & api 설계": "Backend",
+    "llm": "LLM", "프롬프트 엔지니어링": "LLM", "llm 프롬프트 엔지니어링": "LLM",
+    "prompt engineering": "LLM",
+    "rag": "RAG", "rag 파이프라인 설계": "RAG",
+    "wf": "Workflow", "workflow": "Workflow", "워크플로우": "Workflow",
+    "워크플로우 오케스트레이션": "Workflow",
+    "ops": "LLMOps", "llmops": "LLMOps", "llm ops": "LLMOps",
+    "특강": "특강", "special lecture": "특강",
+    "linux": "Linux", "리눅스": "Linux",
+    "aws": "AWS", "amazon web services": "AWS",
+}
+ALLOWED_FM_KEYS = {"title", "date", "tags", "category"}
+MAX_TAGS = 4
+
+
+def canonical_category(value: str) -> str:
+    key = re.sub(r"\s+", " ", str(value)).strip()
+    if key in CATEGORY_ORDER:
+        return key
+    return CATEGORY_ALIASES.get(key.lower(), key)
 
 
 def escape_markdown_text(text: str) -> str:
@@ -57,11 +113,16 @@ def sanitize_heading(text: str) -> str:
     return cleaned or "Untitled"
 
 
-def parse_front_matter(text: str) -> dict:
+def parse_front_matter(text: str, notes: list[str] | None = None) -> dict:
+    text = text.lstrip("\ufeff")
     if not text.startswith("---"):
+        if notes is not None:
+            notes.append("Front Matter 없음")
         return {}
     parts = text.split("---", 2)
     if len(parts) < 3:
+        if notes is not None:
+            notes.append("Front Matter 닫는 --- 없음")
         return {}
     raw = parts[1]
     try:
@@ -70,6 +131,8 @@ def parse_front_matter(text: str) -> dict:
         data = yaml.safe_load(raw) or {}
         return data if isinstance(data, dict) else {}
     except Exception:
+        if notes is not None:
+            notes.append("YAML 파싱 실패 → 느슨한 파서로 읽음")
         return parse_front_matter_loose(raw)
 
 
@@ -159,13 +222,38 @@ def collect_entries() -> tuple[list[dict], list[str]]:
         if path.resolve() == INDEX_PATH.resolve():
             continue
         text = path.read_text(encoding="utf-8")
-        meta = parse_front_matter(text)
+        rel = path.relative_to(ROOT).as_posix()
+        notes: list[str] = []
+        meta = parse_front_matter(text, notes)
         tags = [sanitize_heading(t) for t in normalize_list(meta.get("tags"))]
-        categories = [sanitize_heading(c) for c in normalize_list(meta.get("category"))]
+        categories: list[str] = []
+        for raw_cat in normalize_list(meta.get("category")):
+            cat = canonical_category(sanitize_heading(raw_cat))
+            if cat != sanitize_heading(raw_cat):
+                notes.append(f"category 별칭 {raw_cat!r} → {cat!r}")
+            if cat not in CATEGORY_ORDER:
+                notes.append(f"허용 목록 밖 category {cat!r}")
+            if cat not in categories:
+                categories.append(cat)
+        if meta and not categories:
+            notes.append("category 없음")
+        extra_keys = sorted(str(k) for k in meta if k not in ALLOWED_FM_KEYS)
+        if extra_keys:
+            notes.append("허용 밖 키: " + ", ".join(extra_keys))
+        if len(tags) > MAX_TAGS:
+            notes.append(f"tags {len(tags)}개 (최대 {MAX_TAGS})")
+        if meta and not parse_date(meta.get("date")):
+            notes.append("date 없음/형식 오류 → 파일명 날짜 사용")
+        fn_date = date_from_filename(path.name)
+        fm_date = parse_date(meta.get("date"))
+        if fn_date and fm_date and fn_date != fm_date:
+            notes.append(f"date {fm_date} ≠ 파일명 {fn_date}")
+        for note in notes:
+            warnings.append(f"{rel}: {note}")
         title = sanitize_heading(str(meta.get("title") or "").strip() or path.stem)
         sort_date = parse_date(meta.get("date")) or date_from_filename(path.name)
         if sort_date is None:
-            warnings.append(f"날짜 없음, 건너뜀: {path.name}")
+            warnings.append(f"{rel}: 날짜 없음, 건너뜀")
             continue
         entries.append(
             {
@@ -219,10 +307,17 @@ def render_index(entries: list[dict]) -> str:
         "",
         "## 대분류",
         "",
-        "허용 값: Git, Python, AI Literacy, Machine Learning, SQL, Linux, AWS, Frontend, Backend.",
-        "전환일은 해당 대분류에 모두 나타난다.",
+        "허용 값: " + ", ".join(CATEGORY_ORDER) + ".",
+        "순서는 교안 합본 과목 순서(01~14, 특강)이고, 교안 밖 트랙(Linux, AWS)은 뒤에 둔다.",
+        "전환일은 해당 대분류에 모두 나타난다. 글이 없는 대분류는 목차에 나타나지 않는다.",
         "",
+        "| category | 교안 폴더 | 교안 과목 | 글 수 |",
+        "|---|---|---|---|",
     ]
+    for name, folder, subject in CATEGORIES:
+        count = len({i["path"] for i in by_cat.get(name, [])})
+        lines.append(f"| {name} | {folder} | {subject} | {count} |")
+    lines.append("")
 
     cat_keys = [c for c in CATEGORY_ORDER if c in by_cat]
     extra_cats = sorted(k for k in by_cat if k not in CATEGORY_ORDER and k != "Uncategorized")
@@ -247,9 +342,11 @@ def render_index(entries: list[dict]) -> str:
 def main() -> int:
     entries, warnings = collect_entries()
     INDEX_PATH.write_text(render_index(entries), encoding="utf-8")
-    print(f"wrote {INDEX_PATH.relative_to(ROOT)}")
+    print(f"wrote {INDEX_PATH.relative_to(ROOT)} ({len(entries)} entries)")
     for line in warnings:
-        print(f"warning: {line}", file=sys.stderr)
+        # GitHub Actions 로그에 경고 주석으로 보이게 한다. 빌드는 실패시키지 않는다.
+        prefix = "::warning::" if os.environ.get("GITHUB_ACTIONS") == "true" else "warning: "
+        print(f"{prefix}{line}", file=sys.stderr)
     return 0
 
 
