@@ -25,7 +25,7 @@
 | RAG | 12-rag | RAG 파이프라인 설계 | 3 |
 | Workflow | 13-workflow | 워크플로우 오케스트레이션 | 0 |
 | LLMOps | 14-llmops | LLMOps | 0 |
-| 특강 | 특강 | 특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등) | 1 |
+| 특강 | 특강 | 특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등, 트랙과 함께) | 1 |
 | Linux | - | 교안 밖 (방과 후·자습) | 0 |
 | AWS | - | 교안 밖 (AWS 방과 후) | 5 |
 
