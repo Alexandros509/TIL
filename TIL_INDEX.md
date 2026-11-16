@@ -21,11 +21,11 @@
 | TypeScript | 08-typescript | 프론트엔드 심화 (TypeScript) | 2 |
 | React & Next.js | 09-react | 프론트엔드 응용 (React/Next.js) | 3 |
 | Backend | 10-backend | 백엔드 아키텍처 & API 설계 | 0 |
-| LLM | 11-llm | LLM 프롬프트 엔지니어링 | 3 |
+| LLM | 11-llm | LLM 프롬프트 엔지니어링 | 4 |
 | RAG | 12-rag | RAG 파이프라인 설계 | 3 |
 | Workflow | 13-workflow | 워크플로우 오케스트레이션 | 0 |
 | LLMOps | 14-llmops | LLMOps | 0 |
-| 특강 | 특강 | 특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등, 트랙과 함께) | 1 |
+| 특강 | 특강 | 특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등, 트랙과 함께) | 4 |
 | Linux | - | 교안 밖 (방과 후·자습) | 0 |
 | AWS | - | 교안 밖 (AWS 방과 후) | 5 |
 
@@ -100,6 +100,7 @@
 - [2026-10-07 Next.js 동작 원리·프로젝트 구축·JSX/TSX](./2026/10/20261007%20TIL.md)
 
 ### LLM
+- [2026-09-22 JS 연산자·제어문·객체 리터럴](./2026/09/20260922%20TIL.md)
 - [2026-09-21 Node.js 환경과 JS 기초](./2026/09/20260921%20TIL.md)
 - [2026-09-14 HTML·LLM 한계와 메시지 구조](./2026/09/20260914%20TIL.md)
 - [2026-09-09 ACID · LangChain · SSE](./2026/09/20260909%20TIL.md)
@@ -110,7 +111,10 @@
 - [2026-11-12 RAG 개념·파이프라인·임베딩·유사도·청킹·검색 고도화](./2026/11/20261112%20TIL.md)
 
 ### 특강
+- [2026-09-18 파이썬 정규 표현식](./Python_Afterschool/20260918%20Python.md)
 - [2026-09-11 REST·저장 프로그램과 주문 함수](./2026/09/20260911%20TIL.md)
+- [2026-08-25 Pandas 정밀 조회 및 결측치 제어, Matplotlib 기초, 데이터 분석 기초, 머신러닝의 이해](./2026/08/20260825%20TIL.md)
+- [2026-08-24 프롬프팅 패턴 이해 및 Numpy, Pandas](./2026/08/20260824%20TIL.md)
 
 ### AWS
 - [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
