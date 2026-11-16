@@ -283,9 +283,9 @@ category: React & Next.js
 tags: [REST, API]
 category: Backend
 
-필기: 특강에서 정규식과 Streamlit만
+필기: Python 특강에서 정규식과 Streamlit
 tags: [Regex, Streamlit]
-category: 특강
+category: [Python, 특강]
 
 금지 예
 
@@ -314,7 +314,7 @@ category (대분류)
 - RAG (교안 12 RAG 파이프라인 설계)
 - Workflow (교안 13 워크플로우 오케스트레이션)
 - LLMOps (교안 14 LLMOps)
-- 특강 (교안 특강)
+- 특강 (교안 특강, 단독 사용 금지: 항상 해당 트랙과 함께)
 - Linux (교안 밖)
 - AWS (교안 밖, 방과 후)
 
@@ -338,7 +338,7 @@ category (대분류)
 - 도구만 겹친다고 넣지 않는다. PyTorch를 써도 오늘 학습이 회귀·네트워크면 Machine Learning이지 Python이 아니다.
 - EC2만 다루고 리눅스는 복습 한 줄이면 AWS만 넣는다.
 - TypeScript 수업이면 TypeScript, React·Next.js 수업이면 React & Next.js다. Next를 썼다고 Backend를 넣지 않는다.
-- 특강(정규식, Streamlit, NumPy 등)만 다룬 날은 특강이다. 정규 수업과 섞인 날은 `[해당 트랙, 특강]`처럼 둘 다 쓴다.
+- 특강은 단독 category로 쓰지 않는다. 특강 내용이 속하는 트랙과 함께 `[해당 트랙, 특강]`으로 쓴다. (예: 정규식·NumPy·Streamlit → `[Python, 특강]`)
 
 별칭 정규화
 

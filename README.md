@@ -34,7 +34,7 @@
 * [🔎 RAG](./TIL_INDEX.md#rag) — RAG 파이프라인 설계 (교안 12)
 * [🔀 Workflow](./TIL_INDEX.md#workflow) — 워크플로우 오케스트레이션 (교안 13)
 * [📈 LLMOps](./TIL_INDEX.md#llmops) — LLMOps (교안 14)
-* [🎤 특강](./TIL_INDEX.md#특강) — 정규식, NumPy/Pandas, Streamlit, Supabase 등 (교안 특강)
+* [🎤 특강](./TIL_INDEX.md#특강) — 정규식, NumPy/Pandas, Streamlit, Supabase 등 (교안 특강 · 단독으로 쓰지 않고 해당 트랙과 함께)
 * [🐧 Linux](./TIL_INDEX.md#linux) — 셸, 권한, 프로세스
 * [☁️ AWS](./TIL_INDEX.md#aws) — EC2, IAM, VPC, 서버리스
 

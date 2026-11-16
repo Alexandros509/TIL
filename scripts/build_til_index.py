@@ -50,7 +50,8 @@ CATEGORIES = [
     ("RAG", "12-rag", "RAG 파이프라인 설계"),
     ("Workflow", "13-workflow", "워크플로우 오케스트레이션"),
     ("LLMOps", "14-llmops", "LLMOps"),
-    ("특강", "특강", "특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등)"),
+    # 특강은 단독으로 쓰지 않는다. 항상 해당 트랙과 함께 [트랙, 특강].
+    ("특강", "특강", "특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등, 트랙과 함께)"),
     ("Linux", "-", "교안 밖 (방과 후·자습)"),
     ("AWS", "-", "교안 밖 (AWS 방과 후)"),
 ]
@@ -237,6 +238,8 @@ def collect_entries() -> tuple[list[dict], list[str]]:
                 categories.append(cat)
         if meta and not categories:
             notes.append("category 없음")
+        if categories == ["특강"]:
+            notes.append("특강 단독 category — 해당 트랙과 함께 [트랙, 특강]으로 쓴다")
         extra_keys = sorted(str(k) for k in meta if k not in ALLOWED_FM_KEYS)
         if extra_keys:
             notes.append("허용 밖 키: " + ", ".join(extra_keys))
