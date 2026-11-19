@@ -22,7 +22,7 @@
 | React & Next.js | 09-react | 프론트엔드 응용 (React/Next.js) | 3 |
 | Backend | 10-backend | 백엔드 아키텍처 & API 설계 | 0 |
 | LLM | 11-llm | LLM 프롬프트 엔지니어링 | 4 |
-| RAG | 12-rag | RAG 파이프라인 설계 | 5 |
+| RAG | 12-rag | RAG 파이프라인 설계 | 6 |
 | Workflow | 13-workflow | 워크플로우 오케스트레이션 | 0 |
 | LLMOps | 14-llmops | LLMOps | 0 |
 | 특강 | 특강 | 특강 (정규식·PostgreSQL 함수·NumPy/Pandas·Streamlit·Tailwind·Supabase·node:test 등, 트랙과 함께) | 4 |
@@ -106,6 +106,7 @@
 - [2026-09-09 ACID · LangChain · SSE](./2026/09/20260909%20TIL.md)
 
 ### RAG
+- [2026-11-19 Cross-Encoder·골든셋 설계·RAGAS 검색 지표](./2026/11/20261119%20TIL.md)
 - [2026-11-18 Re-ranking·맥락 압축·Query 변환·RAG 평가](./2026/11/20261118%20TIL.md)
 - [2026-11-17 Top-k·문맥 주입·LCEL 체인·하이브리드 RRF](./2026/11/20261117%20TIL.md)
 - [2026-11-16 임베딩 캐시·벡터DB 저장·메타데이터 스키마·증분 갱신](./2026/11/20261116%20TIL.md)
@@ -189,8 +190,14 @@
 ### Compose
 - [2026-10-01 Compose 기동 · health · EC2 8000 공개](./AWS_Afterschool/20261001%20AWS.md)
 
+### Context Precision
+- [2026-11-19 Cross-Encoder·골든셋 설계·RAGAS 검색 지표](./2026/11/20261119%20TIL.md)
+
 ### Control Flow
 - [2026-09-22 JS 연산자·제어문·객체 리터럴](./2026/09/20260922%20TIL.md)
+
+### Cross-Encoder
+- [2026-11-19 Cross-Encoder·골든셋 설계·RAGAS 검색 지표](./2026/11/20261119%20TIL.md)
 
 ### DDL
 - [2026-09-04 5장 SQL & 데이터베이스](./2026/09/20260904%20TIL.md)
@@ -434,6 +441,9 @@
 ### RAG
 - [2026-11-12 RAG 개념·파이프라인·임베딩·유사도·청킹·검색 고도화](./2026/11/20261112%20TIL.md)
 
+### RAGAS
+- [2026-11-19 Cross-Encoder·골든셋 설계·RAGAS 검색 지표](./2026/11/20261119%20TIL.md)
+
 ### RDBMS
 - [2026-09-02 허깅페이스 모델과 SQL 기초](./2026/09/20260902%20TIL.md)
 
@@ -624,6 +634,9 @@
 
 ### 결측치
 - [2026-08-25 Pandas 정밀 조회 및 결측치 제어, Matplotlib 기초, 데이터 분석 기초, 머신러닝의 이해](./2026/08/20260825%20TIL.md)
+
+### 골든셋
+- [2026-11-19 Cross-Encoder·골든셋 설계·RAGAS 검색 지표](./2026/11/20261119%20TIL.md)
 
 ### 낙관적락
 - [2026-09-10 동시성 제어와 RLS](./2026/09/20260910%20TIL.md)
